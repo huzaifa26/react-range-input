@@ -3,13 +3,11 @@ html {
   margin: 0;
 }
 
-.rangeInput
-
-.rangeInput input {
+input {
   outline: none;
 }
 
-.rangeInput input[type="range"] {
+input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 0.5vh;
@@ -21,7 +19,7 @@ html {
   transition: opacity 0.2s;
 }
 
-.rangeInput input[type="range"]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 2.5vh;

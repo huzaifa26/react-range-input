@@ -39,7 +39,6 @@ export function RangeInput({ updateRating, width = 400, minValue = 0, maxValue =
   return (
     <>
       <div
-        className='rangeInput'
         style={{
           width,
           position: 'relative',
