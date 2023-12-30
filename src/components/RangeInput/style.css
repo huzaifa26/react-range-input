@@ -1,8 +1,15 @@
-input {
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.rangeInput
+
+.rangeInput input {
   outline: none;
 }
 
-input[type="range"] {
+.rangeInput input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 0.5vh;
@@ -14,13 +21,13 @@ input[type="range"] {
   transition: opacity 0.2s;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.rangeInput input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 2.5vh;
   height: 2.5vh;
   border-radius: 50%;
-  background: blue;
+  background: black;
   cursor: pointer;
 }
 
