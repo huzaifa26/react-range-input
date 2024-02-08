@@ -9,8 +9,6 @@ export default {
   tags: ['autodocs'],
 };
 
-// export const Default = () => <RangeInput />;
-
 export const Primary = {
   
 };
