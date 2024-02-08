@@ -12,5 +12,5 @@ export default {
 // export const Default = () => <RangeInput />;
 
 export const Primary = {
-
+  
 };

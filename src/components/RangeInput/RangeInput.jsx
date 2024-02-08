@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'
 
-export function RangeInput({ updateRating, width = 400, minValue = 0, maxValue = 100, step = 20 }) {
+export function RangeInput({ width = 400, minValue = 0, maxValue = 100, step = 10, updateRating }) {
   const [rangeValue, setRangeValue] = useState(minValue);
 
   useEffect(() => {
@@ -18,9 +18,9 @@ export function RangeInput({ updateRating, width = 400, minValue = 0, maxValue =
     background: `linear-gradient(to right, #777, #777 var(--progress), #777 var(--progress), #777)`,
   };
 
-  const styleObject = {
-    width: '1.25vh',
-    height: '1.25vh',
+  const stepCircles = {
+    width: '5px',
+    height: '5px',
     backgroundColor: '#777',
     borderRadius: '50%',
   };
@@ -37,44 +37,37 @@ export function RangeInput({ updateRating, width = 400, minValue = 0, maxValue =
   };
 
   return (
-    <>
+    <div
+      style={{
+        width,
+        position: 'relative',
+      }}
+    >
       <div
         style={{
-          width,
-          position: 'relative',
-          maxHeight: '2.5vh',
-          minHeight: '2.5vh',
+          display: 'flex',
+          justifyContent: 'space-between',
+          position: 'absolute',
+          width: '100%',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          zIndex: 10,
+          boxSizing: 'border-box',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            paddingRight: '0.7vh',
-            paddingLeft: '0.7vh',
-            position: 'absolute',
-            width: '100%',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            zIndex: 10,
-            boxSizing: 'border-box',
-          }}
-        >
-          {Array.from({ length: maxValue / step + 1 }, (_, index) => index).map((_, index) => (
-            <div style={styleObject}></div>
-          ))}
-        </div>
-        <input
-          type="range"
-          min={minValue}
-          max={maxValue}
-          step={step}
-          value={rangeValue}
-          onChange={handleRangeChange}
-          style={{ ...trackStyle, ...styleObjectInput }}
-        />
+        {Array.from({ length: maxValue / step + 1 }, (_, index) => index).map((_, index) => (
+          <div style={stepCircles}></div>
+        ))}
       </div>
-      <div>{rangeValue}</div>
-    </>
+      <input
+        type="range"
+        min={minValue}
+        max={maxValue}
+        step={step}
+        value={rangeValue}
+        onChange={handleRangeChange}
+        style={{ ...trackStyle, ...styleObjectInput }}
+      />
+    </div>
   )
 }

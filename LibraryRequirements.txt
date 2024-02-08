@@ -1,2 +1,0 @@
-Provide the basic component. 
-provide the hook to return the range value. 
